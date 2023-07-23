@@ -1,7 +1,7 @@
 {
   "name": "@hieuzest/koishi-plugin-cache-sync",
   "description": "Synchronous cache service",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -17,5 +17,10 @@
   ],
   "peerDependencies": {
     "koishi": "4.13.8"
+  },
+  "koishi": {
+    "service": {
+      "implements": ["synccache"]
+    }
   }
 }
