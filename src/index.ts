@@ -1,4 +1,4 @@
-import { Context, Service, Dict, Schema } from 'koishi'
+import { Context, Dict, Schema, Service } from 'koishi'
 
 declare module 'koishi' {
   interface Context {
@@ -15,7 +15,8 @@ class MemoryCache extends Service {
   private store: Dict<Dict<Entry>> = Object.create(null)
 
   constructor(ctx: Context, private config: MemoryCache.Config) {
-    super(ctx, 'synccache')  }
+    super(ctx, 'synccache')
+  }
 
   stop() {
     for (const name in this.store) {
@@ -55,10 +56,6 @@ class MemoryCache extends Service {
       clearTimeout(table[key].timer)
       delete table[key]
     }
-  }
-
-  dump(name: string, remove?: boolean) {
-    
   }
 }
 
