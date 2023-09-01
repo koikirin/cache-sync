@@ -8,7 +8,7 @@ declare module 'koishi' {
 
 interface Entry {
   value: any
-  timer?: NodeJS.Timer
+  timer?: NodeJS.Timeout
 }
 
 class MemoryCache extends Service {
