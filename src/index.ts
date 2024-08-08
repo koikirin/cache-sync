@@ -14,7 +14,7 @@ interface Entry {
 class MemoryCache extends Service {
   private store: Dict<Dict<Entry>> = Object.create(null)
 
-  constructor(ctx: Context, private config: MemoryCache.Config) {
+  constructor(ctx: Context, public config: MemoryCache.Config) {
     super(ctx, 'synccache')
   }
 
